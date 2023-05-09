@@ -178,13 +178,18 @@ function App() {
         </SortableList>
       </div>
       <dialog id="infoModal" onClick={handleclose}>
-        <img width="600" src={image} alt="" />{' '}
+        <img
+          width="600"
+          style={{ objectFit: 'contain', maxWidth: '100%', maxHeight: '100%' }}
+          src={image}
+          alt=""
+        />{' '}
       </dialog>
 
       <dialog id="infoModal2" onClick={handleclose}>
         <form>
-          <p style={{ position: 'flex' }}>
-            <label>
+          <p>
+            <label className="label">
               圖片:{' '}
               <input
                 accept="image/*"
@@ -193,7 +198,9 @@ function App() {
                 required
               />
             </label>
-            <label>
+          </p>
+          <p>
+            <label className="label">
               標籤:{' '}
               <select
                 onChange={(e) => setaddimagetag(e.target.value)}
